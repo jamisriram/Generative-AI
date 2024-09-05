@@ -3,87 +3,10 @@
 
 <head>
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.39.0/gradio.js"></script>
-    <link rel="stylesheet" href="gen.css" type="text/css">
+    <link rel="stylesheet" href="./gen.css">
 </head>
 
 <body>
-    <script>
-        const socialIconButtons = document.getElementsByClassName("social-icon");
-
-function postToSocialMedia(classList) {
-    const content = `Check out my cool generative AI Project 😎 \n${window.location.href.toString()}`;
-    if (classList.contains("twitter")) {
-        const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      content
-    )}`;
-        window.open(url);
-    } else if (classList.contains("linkedin")) {
-        const url = `https://www.linkedin.com/share?text=${encodeURIComponent(
-      content
-    )}`;
-        window.open(url);
-    } else if (classList.contains("whatsapp")) {
-        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(content)}`);
-    }
-}
-
-const addEventListenersToSocialIconButton = () => {
-    for (let i = 0; i < socialIconButtons.length; i++) {
-        socialIconButtons[i].addEventListener("click", () =>
-            postToSocialMedia(socialIconButtons[i].classList)
-        );
-    }
-};
-
-addEventListenersToSocialIconButton();
-
-const skillIcon = document.getElementsByClassName("tooltip");
-
-
-const addEventListenersToSkillIcon = () => {
-    for (let i = 0; i < skillIcon.length; i++) {
-        skillIcon[i].addEventListener("click", (e) => {
-            console.log(e.target)
-            updateDescription(e.target.id);
-        });
-    }
-};
-
-addEventListenersToSkillIcon();
-
-const descriptionDiv = document.getElementsByClassName("about-section");
-const updateDescription = (id) => {
-    let description = "";
-
-    switch (id) {
-        case "googleColab":
-            description = "Google Colab: User-friendly platform for code writing, execution, and sharing. Beloved by AI experts, students, developers, and researchers for data analysis, ML, and AI exploration.";
-            break;
-        case "gradio":
-            description = "Gradio: A user-friendly tool that allows to create and share interactive Al Apps without extensive Coding Knowledge.";
-            break;
-        case "openAi":
-            description = "OpenAI: An AI-based chat service powered by Open AI's language model. OpenAI APIs offer access to advanced language models and AI capabilities. Integrate NLP, text generation, and more into your apps to revolutionize communication and problem-solving. ";
-            break;
-        case "playHt":
-            description = "PlayHT: PlayHT is a platform that allows you to clone voices using artificial intelligence. The platform uses a deep learning model to train a voice clone that sounds almost exactly like the original voice.";
-            break;
-        case "huggingFace":
-            description = "HuggingFace: The ultimate destination for building, training, and deploying cutting-edge machine learning models! Revolutionize your AI projects with state-of-the-art NLP and more!";
-            break;
-        case "langChain":
-            description = "LangChain: Seamlessly combine Large Language Models (LLMs) with external computation/data. Build chatbots, analyze data effortlessly. Open source for contributions.";
-            break;
-        default:
-            description = "Description of the selected icon will appear here.";
-    }
-    for (let i = 0; i < descriptionDiv.length; i++) {
-        descriptionDiv[i].textContent = description;
-    }
-};
-
-updateDescription("googleColab");
-    </script>
     <div class="main-container" id="main">
         <div class="description-container">
             <div class="nxtwave-logo">
@@ -149,16 +72,7 @@ updateDescription("googleColab");
                     <div class="topic-icon">
                         <div class="tooltip" id="langChain">
                             <img src="https://res.cloudinary.com/davztmw2w/image/upload/v1690651288/image_301_m0b2pw.png" class="zoom-svg langchain-logo" />
-                            <!-- <svg width="19" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" class="zoom-svg">
-                                <g clip-path="url(#a)">
-                                    <path d="M17.264 7.366a4.488 4.488 0 0 0-.387-3.683 4.534 4.534 0 0 0-4.882-2.175 4.55 4.55 0 0 0-7.707 1.628A4.489 4.489 0 0 0 1.29 5.311a4.535 4.535 0 0 0 .557 5.323 4.485 4.485 0 0 0 .383 3.683 4.538 4.538 0 0 0 4.886 2.175A4.488 4.488 0 0 0 10.498 18a4.542 4.542 0 0 0 4.329-3.154 4.49 4.49 0 0 0 2.998-2.175 4.542 4.542 0 0 0-.56-5.305Zm-6.766 9.456a3.357 3.357 0 0 1-2.158-.78l.107-.061 3.584-2.069a.596.596 0 0 0 .294-.51V8.348l1.515.876a.053.053 0 0 1 .029.04v4.186a3.378 3.378 0 0 1-3.371 3.37Zm-7.246-3.094a3.353 3.353 0 0 1-.4-2.26l.106.063 3.587 2.07a.578.578 0 0 0 .585 0l4.382-2.527v1.749c0 .01-.002.018-.007.026a.06.06 0 0 1-.017.02l-3.63 2.094a3.374 3.374 0 0 1-4.606-1.235Zm-.944-7.806a3.364 3.364 0 0 1 1.774-1.48V8.7a.575.575 0 0 0 .291.507l4.361 2.516-1.515.877a.057.057 0 0 1-.053 0l-3.623-2.09a3.378 3.378 0 0 1-1.235-4.606v.018Zm12.448 2.892L10.38 6.273l1.511-.873a.057.057 0 0 1 .053 0l3.623 2.093a3.37 3.37 0 0 1-.507 6.079V9.314a.593.593 0 0 0-.305-.5Zm1.508-2.268-.107-.064-3.58-2.086a.582.582 0 0 0-.59 0L7.61 6.922V5.173a.05.05 0 0 1 .02-.046l3.624-2.09a3.375 3.375 0 0 1 5.01 3.495v.014ZM6.783 9.647l-1.515-.873a.06.06 0 0 1-.029-.042V4.556a3.374 3.374 0 0 1 5.532-2.59l-.107.06-3.583 2.068a.596.596 0 0 0-.295.511l-.003 5.042Zm.823-1.774 1.951-1.125 1.955 1.125v2.25l-1.948 1.125-1.955-1.125-.003-2.25Z" fill="#0EA982"></path>
-                                </g>
-                                <defs>
-                                    <clipPath id="a">
-                                        <path fill="#fff" transform="translate(.553)" d="M0 0h18v18H0z"></path>
-                                    </clipPath>
-                                </defs>
-                            </svg> -->
+        
                             <span class="tooltiptext">LangChain</span>
                         </div>
                     </div>
@@ -215,7 +129,7 @@ updateDescription("googleColab");
         </div>
         <div class="chat-bot-container">
             <gradio-app src="https://jamisriram-mygenaiavatarspeech.hf.space"></gradio-app>
-            <!-- <iframe class="chat-bot-container-iframe" height="100%" width="100%" frameborder="0" src="https://lavanyaburlagadda-chatbot-openai-playht-old.hf.space/?__theme=dark"></iframe> -->
+            
         </div>
         <div class="footer-section footer-mobile">
             <div class="footer-info">
@@ -247,6 +161,9 @@ updateDescription("googleColab");
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="./index.js">
+
+    </script>
 
 </body>
 
