@@ -307,7 +307,7 @@ body {
 
 .zoom-svg {
     transform: scale(1.5);
-    /* Zoom the SVG by 1.5 times on hover */
+    
 }
 
 @media screen and (max-width: 1199px) {
@@ -328,7 +328,7 @@ body {
     box-sizing: border-box;
 }
 
-.chat-bot-container-iframe {}
+
 
 .social-icon {
     cursor: pointer;
